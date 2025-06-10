@@ -17,7 +17,7 @@
     </div>
     <footer>
       <div class="footp">
-        <p>CopyRight © 2023</p>
+        <p>CopyRight © 2025</p>
         <p>DEEZCATZ All Rights Reserved</p>
       </div>
     </footer>
@@ -27,10 +27,6 @@
 <script setup>
 import { ref } from "vue";
 import Headers from "../components/rouheader.vue";
-let active = ref("1");
-const change = (str) => {
-  active.value = str;
-};
 </script>
 
 <style scoped>

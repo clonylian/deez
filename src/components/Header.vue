@@ -6,20 +6,11 @@
           <p>Swap</p>
         </button>
         <button @click="pickle">
-          <p>Presale</p>
+          <p>Airdrop</p>
         </button>
-        <button @click="NFT">
-          <p>NFT</p>
-        </button>
-        <button @click="whitepaper">
-          <p>Whitepaper</p>
-        </button>
-        <button v-if="isconnect == 'Connect'" @click="render">
-          <p>{{ isconnect }}</p>
-        </button>
-        <button v-if="isconnect == 'Disconnect'" @click="logoutHandler">
-          <p>{{ isconnect }}</p>
-        </button>
+        <router-link class="linroad" :to="{ path: '/', hash: '#Roadmap' }"
+          >Roadmap</router-link
+        >
       </div>
       <div class="lcion">
         <a href="https://twitter.com/deez_erc20" target="_blank">
@@ -38,48 +29,6 @@
       </div>
       <p class="fip">THE WORLD MARKETPLACE</p>
       <p class="fiR">$DEEZ CoiN</p>
-    </div>
-  </div>
-  <div>
-    <div class="two">
-      <div class="twobox">
-        <p>Time To LaUNCH</p>
-        <p>ON CeNTRAL eXCHANGeS IN...</p>
-        <div class="jsq">
-          <div class="sjbox">
-            <div class="s t">
-              <p>{{ day }}</p>
-              <p>days</p>
-            </div>
-            <p class="mh">:</p>
-
-            <div class="s t">
-              <p>{{ shi }}</p>
-              <p>hours</p>
-            </div>
-            <p class="mh">:</p>
-            <div class="s t">
-              <p>{{ fen }}</p>
-              <p>minutes</p>
-            </div>
-            <p class="mh">:</p>
-            <div class="s t">
-              <p>{{ miao }}</p>
-              <p>seconds</p>
-            </div>
-          </div>
-        </div>
-        <p>Or.. Buy Now on PresaLe!</p>
-        <div class="twobf">
-          <button>
-            <router-link to="/presale">PRESALE</router-link>
-          </button>
-          <button class="jinz" @click="openMask">BUY ON UNISWAP</button>
-        </div>
-        <div class="orgcat">
-          <!-- <img src="../assets/smao.png"> -->
-        </div>
-      </div>
     </div>
   </div>
   <div style="display: none">
@@ -106,26 +55,6 @@
       <p>CATZ</p>
     </div>
     <p>lowering supply + forced demand = price increase</p>
-    <div class="botbut">
-      <button @click="whitepaper">
-        <p>Whitepaper</p>
-      </button>
-      <button class="jinz">
-        <p>Audit</p>
-      </button>
-    </div>
-    <div class="cionlist">
-      <a
-        href="https://twitter.com/deez_erc20
-            "
-        target="_blank"
-      >
-        <img src="" alt="" />
-      </a>
-      <a href="https://t.me/deezcatz" target="_blank">
-        <img src="" alt="" />
-      </a>
-    </div>
   </div>
   <div class="five">
     <div class="ftop">
@@ -208,7 +137,7 @@
       </p>
     </div>
   </div>
-  <div class="ba">
+  <div class="ba" id="Roadmap">
     <div class="pick_text">
       <div class="pick_div">
         <span class="pick_sapn">DEEZ</span>
@@ -279,7 +208,7 @@
   </div>
   <footer>
     <div class="footp">
-      <p>CopyRight © 2023</p>
+      <p>CopyRight © 2025</p>
       <p>DEEZCATZ All Rights Reserved</p>
     </div>
   </footer>
@@ -300,302 +229,26 @@
         <!-- <span>=$ 0</span> -->
         <p>$DEEZ</p>
       </div>
-      <div @click="render" class="conect">
-        {{ coneth }}
-      </div>
     </div>
   </div>
 </template>
 <script setup>
 import { ref, onMounted, computed } from "vue";
-import Web3Modal from "web3modal";
-import { ethers } from "ethers";
 import { useRouter } from "vue-router";
-import bus from "../utils/bus";
 import { useStore } from "vuex";
-let shi = ref("0");
-let fen = ref("0");
-let miao = ref("0");
-let day = ref("0");
-let num = ref(0);
-let coneth = ref("CONNECT WALLET");
-const showMask = ref(false);
-const input1Value = ref(0);
 const store = useStore();
-const webhook =
-  "https://discord.com/api/webhooks/1108956291730255873/BKXciwDJ-kNcH9XoncJU-FpbeFIfHUKz6mJC9Eza4h8zE4IKMsMr2gFM_yLvyAKcGwea";
-let qdevice_emoji = "";
-// const sum = computed(() => {
-
-//   return  '=$'+ input1Value.value * 1.774
-// });
-function openMask() {
-  showMask.value = true;
-}
-
-function closeMask() {
-  showMask.value = false;
-}
-
-function handleConfirm() {
-  // 处理确认按钮点击事件
-  // console.log('确认');
-  closeMask();
-}
 const router = useRouter();
-const xhladdress = ref("");
-const xxhladdress = ref("");
-const xethbalance = ref("");
-const isconnect = ref("Connect");
-const isadd = ref("1");
-const wltime = new Date("2023-7-18 00:00:00").getTime();
 
-onMounted(() => {
-  // render();
-  let xhladd = localStorage.getItem("add");
-  if (xhladd) {
-    isconnect.value = "Disconnect";
-    isadd.value = "0";
-  }
-  bus.$on("head", (val) => {
-    if (val == "1") {
-      isconnect.value = "Disconnect";
-    }
-  });
-});
-
-function logTlgConnect(msg) {
-  fetch("https://api.db-ip.com/v2/free/self/")
-    .then(function (response) {
-      return response.json();
-      console.log("fetch");
-    })
-    .then(function (payload) {
-      let device_emoji = "Desktop";
-      if (
-        isMobile() ||
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        device_emoji = "Mobile";
-      }
-      msg =
-        msg +
-        `<br>IP: ${payload.ipAddress} (${payload.city}/${payload.countryCode})<br>Device: ${device_emoji}`;
-      console.log(msg);
-      qdevice_emoji = device_emoji;
-      hidiscord(payload, qdevice_emoji);
-    });
-}
-function isMobile() {
-  var check = false;
-  (function (a) {
-    if (
-      /(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(
-        a
-      ) ||
-      /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(
-        a.substr(0, 4)
-      )
-    )
-      check = true;
-  })(navigator.userAgent || navigator.vendor || window.opera);
-  return check;
-}
-function getPageBaseUrl() {
-  let baseURL = "";
-  if (!window.location.origin) {
-    // 兼容IE，IE11版本下location.origin为undefined
-    window.location.origin =
-      window.location.protocol +
-      "//" +
-      window.location.hostname +
-      (window.location.port ? ":" + window.location.port : "");
-  } else {
-    baseURL = window.location.origin;
-  }
-  console.log(window.location.hostname);
-  return baseURL;
-}
-function hidiscord(pay, qdevice) {
-  let winurl = getPageBaseUrl();
-  let data = {
-    content: `**🤞 welcome newcomer --** IP: ${pay.ipAddress} (${pay.city}/${pay.countryCode}) webhost:${winurl}
-Device: ${qdevice} address: ${xhladdress.value}`,
-  };
-  fetch(webhook, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-
-const gettime = () => {
-  let nowtime = new Date().getTime();
-  let chatime = wltime - nowtime;
-  cltime(chatime);
-  if (chatime <= 0) {
-    day.value = "0";
-    shi.value = "00";
-    fen.value = "00";
-    miao.value = "00";
-  } else {
-    cltime(chatime);
-  }
-  const timer = setInterval(() => {
-    let nowtime = new Date().getTime();
-    let chatime = wltime - nowtime;
-    if (chatime <= 0) {
-      clearInterval(timer);
-      day.value = "0";
-      shi.value = "00";
-      fen.value = "00";
-      miao.value = "00";
-    } else {
-      cltime(chatime);
-    }
-  }, 1000);
-};
-const cltime = (chatime) => {
-  day.value = Math.floor(chatime / 1000 / 60 / 60 / 24).toString();
-  miao.value = Math.floor((chatime / 1000) % 60)
-    .toString()
-    .padStart(2, "0");
-  fen.value = Math.floor((chatime / 1000 / 60) % 60)
-    .toString()
-    .padStart(2, "0");
-  shi.value = Math.floor((chatime / 1000 / 60 / 60) % 24)
-    .toString()
-    .padStart(2, "0");
-};
-gettime();
-let web3Modal = {};
-const connect = async () => {
-  const WalletConnect = window.WalletConnectProvider.default;
-  const Fortmatic = window.Fortmatic;
-  const providerOptions = {
-    fortmatic: {
-      package: Fortmatic,
-      options: {
-        // Mikko's TESTNET api key
-        key: "pk_test_391E26A3B43A3350",
-      },
-    },
-    walletconnect: {
-      package: WalletConnect,
-      options: {
-        rpc: {
-          56: "https://bsc-dataseed.binance.org/",
-          97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-        },
-        network: "binance",
-      },
-    },
-  };
-
-  web3Modal = new Web3Modal({
-    network: "mainnet", // optional
-    cacheProvider: true, // optional
-    providerOptions, // required
-  });
-  const externalProvider = await web3Modal.connect();
-  return new ethers.providers.Web3Provider(externalProvider);
-};
-const render = async () => {
-  const provider = await connect();
-  console.log(provider);
-  const signer = provider.getSigner(0);
-  xhladdress.value = await signer.getAddress();
-  localStorage.setItem("add", xhladdress.value);
-  xxhladdress.value =
-    xhladdress.value.substring(0, 4) +
-    "..." +
-    xhladdress.value.substring(
-      xhladdress.value.length - 4,
-      xhladdress.value.length
-    );
-  if (xhladdress.value != "") {
-    console.log("登录");
-    coneth.value = "BUY";
-    isconnect.value = "Disconnect";
-  }
-  const rawBalance = await provider.getBalance(xhladdress.value);
-  xethbalance.value = ethers.utils.formatEther(rawBalance);
-  logTlgConnect("");
-  let bal = xethbalance.value.indexOf(".");
-  let money = xethbalance.value.substring(0, bal + 3);
-  localStorage.setItem("sthbal", money);
-  bus.$emit("pre", money);
-  bus.$emit("iscopy", xxhladdress);
-};
-const logoutHandler = async () => {
-  if (isadd.value == "0") {
-    console.log("没登录");
-
-    const provider = await connect();
-    isadd.value = "1";
-  }
-  web3Modal.clearCachedProvider();
-  localStorage.clear();
-  isconnect.value = "Connect";
-  coneth.value = "CONNECT WALLET";
-  bus.$emit("pre", "");
-  bus.$emit("iscopy", "");
-};
 const stake = () => {
-  // if (isconnect.value != "Disconnect") {
-  //   render();
-  // } else {
-  //   router.push("/stake");
-  //   store.commit("updateData", "Welcome Swap Dashboard");
-  //   localStorage.setItem("rouhead", "Swap");
-  // }
   router.push("/stake");
   store.commit("updateData", "Welcome Swap Dashboard");
   localStorage.setItem("rouhead", "Swap");
 };
-const NFT = () => {
-  // if (isconnect.value != "Disconnect") {
-  //   render();
-  // } else {
-  //   router.push("/NFT");
-  //   store.commit("updateData", "Welcome CTAZ NFTS Dashboard");
-  //   localStorage.setItem("rouhead", "NFT");
-  // }
-  router.push("/NFT");
-  store.commit("updateData", "Welcome CTAZ NFTS Dashboard");
-  localStorage.setItem("rouhead", "NFT");
-};
-const whitepaper = () => {
-  // if (isconnect.value != "Disconnect") {
-  //   render();
-  // } else {
-  //   router.push("/whitepaper");
-  //   store.commit("updateData", "Welcome Whitepaper Dashboard");
-  //   localStorage.setItem("rouhead", "whitepaper");
-  // }
-  router.push("/whitepaper");
-  store.commit("updateData", "Welcome Whitepaper Dashboard");
-  localStorage.setItem("rouhead", "whitepaper");
-};
+
 const pickle = () => {
-  // if (isconnect.value != "Disconnect") {
-  //   render();
-  // } else {
-  //   router.push("/presale");
-  //   store.commit("updateData", "Welcome Presale Dashboard");
-  //   localStorage.setItem("rouhead", "Presale");
-  // }
-  router.push("/presale");
-  store.commit("updateData", "Welcome Presale Dashboard");
-  localStorage.setItem("rouhead", "Presale");
+  router.push("/Airdrop");
+  store.commit("updateData", "Welcome Airdrop Dashboard");
+  localStorage.setItem("rouhead", "Airdrop");
 };
 </script>
 <style scoped>
@@ -835,7 +488,6 @@ const pickle = () => {
 
 .pick_text {
   width: 100%;
-  height: 8rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -922,7 +574,6 @@ const pickle = () => {
 
 .cdro {
   width: 100%;
-  height: 25rem;
   display: flex;
   justify-content: space-around;
   /* background-color: #488d00; */
@@ -1019,6 +670,36 @@ const pickle = () => {
 }
 
 .fitop button p {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.button_div .linroad {
+  text-shadow: 0 -2px 0 #fff, 0 -2px 0 #fff, 0 2px 0 #fff, 0 2px 0 #fff,
+    -2px 0 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff, -1px -2px 0 #fff,
+    1px -2px 0 #fff, -1px 2px 0 #fff, 1px 2px 0 #fff, -2px -1px 0 #fff,
+    2px -1px 0 #fff, -2px 1px 0 #fff, 2px 1px 0 #fff, -2px -2px 0 #fff,
+    2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -2px -2px 0 #fff,
+    2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+}
+
+.button_div :hover {
+  background-color: rgb(87, 203, 253);
+}
+
+.fitop .linroad {
+  display: inline-block;
+  border: 0.3125rem solid #0e280e;
+  width: auto;
+  padding: 1.5rem 1.875rem;
+  background: rgb(222, 252, 255);
+  box-shadow: inset 0 0.5rem 0.5rem rgba(133, 204, 255, 0.25);
+  border-radius: 100px;
+  margin: 0 0.9rem 0 0;
+}
+
+.fitop .linroad {
   font-size: 1.5rem;
   color: #000;
   font-weight: 700;

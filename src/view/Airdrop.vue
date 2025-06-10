@@ -5,33 +5,7 @@
       <div class="pickbox">
         <div class="pickb">
           <div class="pickbc">
-            <p>PRESALE SEAGE 1 IS LIVE IN</p>
-            <div class="flnum">
-              <div class="jsq">
-                <div class="sjbox">
-                  <div class="s t vs">
-                    <p>{{ day }}</p>
-                    <p>days</p>
-                  </div>
-                  <p class="mh">:</p>
-
-                  <div class="s p">
-                    <p>{{ shi }}</p>
-                    <p>hours</p>
-                  </div>
-                  <p class="mh">:</p>
-                  <div class="s f t">
-                    <p>{{ fen }}</p>
-                    <p>minutes</p>
-                  </div>
-                  <p class="mh">:</p>
-                  <div class="s m t">
-                    <p>{{ miao }}</p>
-                    <p>seconds</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <p>Aridorp Cooming soon!</p>
           </div>
         </div>
       </div>
@@ -54,38 +28,7 @@
               <button @click="contribute">Contribute</button>
             </div>
           </div>
-          <div
-            class="presale_admin"
-            @click="render()"
-            v-if="isconnect == 'Connect'"
-          >
-            Connect Wallet
-          </div>
-        </div>
-        <!-- <p class="yyi">{{ warning }}</p> -->
-        <p class="preher">
-          {{ eth }}/100.0 ETH
-          <br />
-          CA:TBA
-          <!-- <a
-            href="https://etherscan.io/address/0x6d9a06774242a14fObOfd4a4f75bb93ee8d3e56d"
-            target="_blank"
-            >CA:TBA</a
-          > -->
-        </p>
-        <div class="pretab">
-          <div>
-            <p>MIN/MAX</p>
-            <p>MIN - 0.05 ETH<br />MAX - 1.0 ETH</p>
-          </div>
-          <div class="pretablive"></div>
-          <div>
-            <p>CAPS</p>
-            <p>SOFTCAP - 25 ETH<br />HARDCAP - 100.0 ETH</p>
-          </div>
-        </div>
-        <div class="prebutton">
-          <div @click="zhcshow">My 5% Referral Link</div>
+          <div class="presale_admin">Eligibility Check</div>
         </div>
       </div>
       <div class="whit_box stafo">
@@ -101,7 +44,7 @@
       </div>
       <footer>
         <div class="footp">
-          <p>CopyRight © 2023</p>
+          <p>CopyRight © 2025</p>
           <p>DEEZCATZ All Rights Reserved</p>
         </div>
       </footer>
@@ -113,196 +56,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import Headers from "../components/rouheader.vue";
-import Web3Modal from "web3modal";
-import { ethers } from "ethers";
-import bus from "../utils/bus";
-import Zhc from "../components/ZHC.vue";
-import interactabi from "../assets/Contribute.json";
-import Web3 from "web3";
-let day = ref("0");
-let shi = ref("0");
-let fen = ref("0");
-let miao = ref("0");
-let num = ref(0);
-let button = ref(false);
-const xhladdress = ref("");
-const xxhladdress = ref("");
-const xethbalance = ref("");
-const balance = ref("0.05");
-const eth = ref("0.0");
-const warning = ref("");
-let pi = ref("0");
-let isconnect = ref("Connect");
-let interactadd = ref("0x4f5C018C35DD3C276B20Abc8f6aa17537538cB2b");
-const wltime = new Date("2023-7-10 10:57:00").getTime();
-onMounted(() => {
-  let xhladds = localStorage.getItem("add");
-  if (xhladds != "") {
-    xhladdress.value = xhladds;
-    // interact();
-  } else {
-    render();
-  }
-  let xhlbal = localStorage.getItem("sthbal");
-  if (xhlbal) {
-    isconnect.value = "Disconnect";
-    xethbalance.value = xhlbal;
-  }
-  bus.$on("pre", (val) => {
-    if (val != "") {
-      isconnect.value = "Disconnect";
-      xethbalance.value = val;
-    }
-  });
-});
-let zhcshow = () => {
-  bus.$emit("show", true);
-};
-let accounty = () => {
-  if (Number(balance.value) < 0.05) {
-    warning.value = "⚠ 您输入的不在范围呢,请您输入正确的值!";
-    balance.value = "0.05";
-    console.log("⚠ 您输入的不在范围呢,请您输入正确的值!");
-  } else if (Number(balance.value) > 1) {
-    warning.value = "⚠ 您输入的不在范围呢,请您输入正确的值!";
-    balance.value = "1.00";
-  } else {
-    balance.value = Number(balance.value).toFixed(2);
-  }
-};
-const web3 = new Web3(
-  "https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"
-);
-let interact = () => {
-  const contract = new web3.eth.Contract(interactabi, interactadd.value);
-  console.log(contract.methods);
-  let max = contract.methods.MAX_INDIVIDUAL_CONTRIBUTION().encodeABI();
-  const wei = 1000000000000000000n;
-  eth.value = wei / BigInt(max);
-  console.log(BigInt(max));
-  return contract;
-};
-const contribute = async () => {
-  let coun = interact();
-  const amount = web3.utils.toWei(balance.value, "ether");
-  console.log(balance.value);
-  let data = coun.methods.contribute(xhladdress.value, amount).encodeABI();
-  console.log(data);
-  ethereum
-    .request({
-      method: "eth_sendTransaction",
-      params: [
-        {
-          from: xhladdress.value,
-          to: interactadd.value,
-          value: amount,
-          data: data,
-        },
-      ],
-    })
-    .then((txHash) =>
-      toastr.error(
-        "The transaction was not completed due to an error. Please try again in a few moments.",
-        "Failed to Create Transaction"
-      )
-    )
-    .catch((error) => console.error);
-};
-
-let web3Modal = {};
-const connect = async () => {
-  const WalletConnect = window.WalletConnectProvider.default;
-  const Fortmatic = window.Fortmatic;
-  const providerOptions = {
-    fortmatic: {
-      package: Fortmatic,
-      options: {
-        // Mikko's TESTNET api key
-        key: "pk_test_391E26A3B43A3350",
-      },
-    },
-    walletconnect: {
-      package: WalletConnect,
-      options: {
-        rpc: {
-          56: "https://bsc-dataseed.binance.org/",
-          97: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-        },
-        network: "binance",
-      },
-    },
-  };
-
-  web3Modal = new Web3Modal({
-    network: "mainnet", // optional
-    cacheProvider: true, // optional
-    providerOptions, // required
-  });
-  const externalProvider = await web3Modal.connect();
-  return new ethers.providers.Web3Provider(externalProvider);
-};
-const render = async () => {
-  const provider = await connect();
-  const signer = provider.getSigner(0);
-  xhladdress.value = await signer.getAddress();
-  localStorage.setItem("add", xhladdress.value);
-  xxhladdress.value =
-    xhladdress.value.substring(0, 4) +
-    "..." +
-    xhladdress.value.substring(
-      xhladdress.value.length - 4,
-      xhladdress.value.length
-    );
-  if (xhladdress.value != "") {
-    isconnect.value = "Disconnect";
-  }
-  const rawBalance = await provider.getBalance(xhladdress.value);
-  xethbalance.value = ethers.utils.formatEther(rawBalance);
-  let bal = xethbalance.value.indexOf(".");
-  let money = xethbalance.value.substring(0, bal + 3);
-  xethbalance.value = money;
-  localStorage.setItem("sthbal", money);
-  bus.$emit("head", "1");
-};
-const gettime = () => {
-  let nowtime = new Date().getTime();
-  let chatime = wltime - nowtime;
-  cltime(chatime);
-  if (chatime <= 0) {
-    day.value = "0";
-    shi.value = "00";
-    fen.value = "00";
-    miao.value = "00";
-  } else {
-    cltime(chatime);
-  }
-  const timer = setInterval(() => {
-    let nowtime = new Date().getTime();
-    let chatime = wltime - nowtime;
-    if (chatime <= 0) {
-      clearInterval(timer);
-      day.value = "0";
-      shi.value = "00";
-      fen.value = "00";
-      miao.value = "00";
-    } else {
-      cltime(chatime);
-    }
-  }, 1000);
-};
-const cltime = (chatime) => {
-  day.value = Math.floor(chatime / 1000 / 60 / 60 / 24).toString();
-  miao.value = Math.floor((chatime / 1000) % 60)
-    .toString()
-    .padStart(2, "0");
-  fen.value = Math.floor((chatime / 1000 / 60) % 60)
-    .toString()
-    .padStart(2, "0");
-  shi.value = Math.floor((chatime / 1000 / 60 / 60) % 24)
-    .toString()
-    .padStart(2, "0");
-};
-gettime();
 </script>
 <style scoped>
 .with_s {
@@ -570,7 +323,7 @@ footer > p {
 
 .presale {
   width: 100%;
-  height: 48.2rem;
+  height: 12.2rem;
   /* border: 1px red solid;  */
   /* background-color: #0e280e; */
 }

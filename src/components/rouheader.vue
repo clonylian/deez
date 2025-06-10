@@ -3,7 +3,7 @@
     <div class="headerbox first">
       <div class="hecon fitop">
         <div class="heconl">
-          <router-link to="/">
+          <router-link to="/" class="noborder">
             <p class="P">DEEZ</p>
             <span class="O">OR</span>
             <p class="R">CATZ</p>
@@ -33,12 +33,8 @@ onMounted(() => {
   let headcon = localStorage.getItem("rouhead");
   if (headcon == "Swap") {
     store.commit("updateData", "Welcome Swap Dashboard");
-  } else if (headcon == "NFT") {
-    store.commit("updateData", "Welcome CTAZ NFTS Dashboard");
-  } else if (headcon == "Presale") {
-    store.commit("updateData", "Welcome Presale Dashboard");
-  } else {
-    store.commit("updateData", "Welcome Whitepaper Dashboard");
+  } else if (headcon == "Airdrop") {
+    store.commit("updateData", "Welcome Airdrop Dashboard");
   }
 });
 </script>
