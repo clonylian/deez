@@ -27,9 +27,8 @@
         <span>OR</span>
         <p>CATZ</p>
       </div>
-      <p class="fip" @click="copy()">
-        0x0f4fc335a8f585a225a8078372be31bcdc0b4444
-      </p>
+      <p class="fip">0x0f4fc335a8f585a225a8078372be31bcdc0b4444</p>
+
       <p class="fiR">$DZCZ CoiN</p>
     </div>
   </div>
@@ -184,9 +183,6 @@
       <p>DEEZCATZ All Rights Reserved</p>
     </div>
   </footer>
-  <div @click="iscopybox(false)" :class="iscopy ? 'copybox' : 'none'">
-    <button><p>COPIED</p></button>
-  </div>
 </template>
 <script setup>
 import { ref, onMounted, computed } from "vue";
@@ -194,8 +190,6 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 const store = useStore();
 const router = useRouter();
-
-let iscopy = ref(false);
 
 let address = ref("0x0f4fc335a8f585a225a8078372be31bcdc0b4444");
 
@@ -213,11 +207,6 @@ const pickle = () => {
 
 let copy = () => {
   navigator.clipboard.writeText(address.value);
-  iscopybox(true);
-};
-
-let iscopybox = (bol) => {
-  iscopy.value = bol;
 };
 </script>
 <style scoped>
