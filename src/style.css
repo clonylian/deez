@@ -1,0 +1,1230 @@
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/Aclonica-Regular-2.ttf") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 0.6vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+#app {
+  background-image: url("./assets/homebg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: url(./assets/ufo.9907241a782f9d32c1ea.png), auto !important;
+}
+
+/* @media only screen and (min-width: 420px) and (max-width: 700px){
+  #app .qi .qicon .qonh .qdone{
+    position: absolute;
+    left: 2rem!important;
+    top: 33rem!important;
+    font-size: 1.5rem !important;
+  }
+  #app .qi .qicon .qonh .qdtwo{
+    position: absolute;
+    left: 66rem!important;
+    top: 33rem!important;
+    font-size: 1.5rem !important;
+  }
+  #app .qi .qicon .qtwh .qdthree{
+    position: absolute ;
+    left: 6rem !important;
+    top: 56rem!important;
+    font-size: 1.5rem !important;
+  }
+  #app  .qi .qicon .qtwh .qdfour{
+    position: absolute ;
+    left: 62rem !important;
+    top: 56rem !important;
+    font-size: 1.5rem !important;
+  }
+   #app  .qi .qicon .qtwh .qdfive{
+    position: absolute ;
+    left:122rem !important;
+    top: 56rem !important;
+    font-size: 1.5rem !important;
+  }
+   #app  .qdone p:nth-child(2){
+    position: absolute ;
+    left: 2% !important;
+    top: 105% !important;
+    font-size: 1.5rem !important;
+  }
+} */
+
+@media (max-width: 500px) {
+  .qi .qicon .qonh .qdone {
+    position: absolute;
+    left: 44rem !important;
+    top: 49rem !important;
+    font-size: 1.5rem !important;
+  }
+  #app .cdro {
+    height: auto;
+  }
+  .qi .qicon .qtwh .qdthree {
+    position: absolute;
+
+    left: 5rem !important;
+    top: 88rem !important;
+    padding: 0;
+    font-size: 1.5rem !important;
+  }
+  .qi .qicon .qtwh .qdfour {
+    position: absolute;
+    left: 109rem !important;
+    top: 88rem !important;
+    font-size: 1.5rem !important;
+  }
+  .qdone p:nth-child(2) {
+    position: absolute;
+    left: 2% !important;
+    top: 105% !important;
+    font-size: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1225px) {
+  #app .presale_admin {
+    padding: 5rem 0;
+    border-radius: 4rem;
+  }
+  #app .topf {
+    margin-top: 10rem;
+  }
+  #app .whitebg .titbox > div > .yol {
+    margin: 0;
+  }
+  #app .whitebg h1 {
+    margin: 10rem 0;
+    font-size: 14.75rem;
+    line-height: 15.625rem;
+  }
+  #app .whitebg .titbox > div {
+    margin-top: 10rem;
+    display: block;
+  }
+  #app .whitebg .titbox > div > div {
+    width: 100%;
+    margin: 15rem 0 0;
+  }
+  #app .whitebg .titbox > .ytwo {
+    margin: 0;
+  }
+  #app .whitebg .titbox > .ytwo > .ytl {
+    margin-top: 3rem;
+  }
+  #app .whitebg .titbox > .ytwo > .ytl > p:nth-child(2) {
+    margin-top: 3rem;
+  }
+  #app .whitebg .titbox > .ytwo > .ytr {
+    margin: 10rem 0;
+  }
+  #app .whitebg .titbox > .ytwo > .ytr > img {
+    width: 140rem;
+    height: 100.1rem;
+  }
+  #app .whitebg .titbox > .ythree {
+    margin-top: 20rem;
+  }
+  #app .whitebg .titbox > .yfl > img {
+    width: 130rem;
+    height: 100rem;
+  }
+  #app .yfr img {
+    width: 140.4rem;
+    height: 220.5rem;
+  }
+  #app .ysr img {
+    width: 85rem;
+    height: 75rem;
+    margin: 0 auto;
+  }
+  #app .yqr img {
+    width: 85.9rem;
+    height: 75.5rem;
+    margin-bottom: 10rem;
+  }
+  #app .yer img {
+    width: 85rem;
+    height: 75rem;
+  }
+  #app .yfl img {
+    width: 110rem;
+    height: 90rem;
+    margin-top: 10rem;
+  }
+  #app .titbox h3,
+  #app .yend h3 {
+    font-size: 10.5rem;
+    text-align: center;
+    margin: 5rem 0;
+  }
+  #app .topf p:nth-child(1) {
+    font-size: 4.5rem;
+  }
+  #app .topf p:nth-child(3) {
+    font-size: 5rem;
+  }
+  #app .titbox {
+    width: 90%;
+  }
+  #app .yend {
+    width: 90%;
+    display: block;
+  }
+  #app .ywl img {
+    width: 141rem;
+    height: 165rem;
+  }
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  #app .yend div {
+    margin: 10rem 0;
+    width: 100%;
+  }
+  #app .titbox p,
+  #app .yend p {
+    font-size: 4rem;
+    line-height: 7rem;
+  }
+  #app .ylong {
+    width: 90%;
+  }
+  #app .ytl img {
+    width: 120rem;
+    height: 130rem;
+  }
+  #app .ylong p {
+    font-size: 4rem;
+    line-height: 7rem;
+  }
+  #app .nftbg h1 {
+    margin-top: 35rem;
+    font-size: 13.75rem;
+  }
+  #app .nftcon {
+    margin-top: 25rem;
+    font-size: 9rem;
+    line-height: 9rem;
+  }
+  #app .nftimg {
+    width: 120rem;
+    height: 120rem;
+  }
+  #app .nftbut {
+    display: block;
+    text-align: center;
+  }
+  #app .nftbut button {
+    font-size: 9rem;
+    margin: 0 0.9rem 3.7rem 0;
+    padding: 3.5rem 10.875rem;
+  }
+  #app .zhccont {
+    width: 145rem;
+    padding: 7rem;
+    margin: 115rem auto 0;
+  }
+  #app .stabg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url(/src/assets/twocat.png);
+  }
+  #app .stakbox h2 {
+    font-size: 15rem;
+    margin: 64.5rem auto;
+  }
+  #app .stabg {
+    padding: 5rem 0;
+  }
+  #app .stabg .stafo {
+    margin: 20rem auto;
+    height: 140rem;
+  }
+  #app .pickbg .stafo {
+    height: 140rem;
+  }
+  #app .nftbg .stafo {
+    height: 140rem;
+  }
+  #app .whitebg .stafo {
+    height: 140rem;
+  }
+  #app .zhcctop h2 {
+    font-size: 7.5rem;
+  }
+  #app .zhcctop > div {
+    width: 7rem;
+    height: 7rem;
+  }
+  #app .zhccb p {
+    margin: 5rem 0 8rem;
+    font-size: 5rem;
+  }
+  #app .zhcin {
+    font-size: 4rem;
+    line-height: 5rem;
+    height: 12rem;
+    width: 108rem;
+    padding: 3rem;
+    border-radius: 3rem;
+  }
+  #app .zhcbut {
+    font-size: 4rem;
+    height: 12rem;
+    width: 36rem;
+    border-radius: 3rem;
+  }
+  #app .cats > img {
+    margin: 0 2rem;
+  }
+  #app .henei {
+    display: none;
+  }
+  #app .fiimg .fiyhy {
+    display: none;
+  }
+
+  #app .input_one input {
+    height: 8rem;
+  }
+  #app .maskbox .buymask {
+    font-size: 8rem;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 8rem;
+  }
+
+  #app .maskbox .conect {
+    height: 15rem;
+    line-height: 15rem;
+  }
+
+  #app .maskbox .input_one {
+    height: 15rem;
+  }
+  #app .maskbox .input_two {
+    height: 15rem;
+  }
+  #app .maskbox .guanbi {
+    width: 14%;
+    height: 13rem;
+    display: flex;
+    font-size: 10rem;
+    font-family: none;
+    /* justify-content: flex-end; */
+    margin-left: 91%;
+    background-image: url(/src/assets/uescc.png);
+    background-repeat: no-repeat;
+    background-size: 42%;
+    padding: 1rem;
+    margin-top: 4rem;
+  }
+  #app .maskbox {
+    width: 89.5%;
+    height: 34%;
+    background-color: rgb(96, 151, 253);
+    border-radius: 9rem;
+    position: absolute;
+    top: 26%;
+    left: 5%;
+  }
+
+  .prebutton {
+    width: 80% !important;
+  }
+  .prebutton div {
+    width: 68rem !important;
+    height: 18rem !important;
+    border-radius: 5rem !important;
+    font-size: 4rem !important;
+    line-height: 18rem !important;
+    margin: 5rem;
+  }
+  .pretab {
+    width: 65% !important;
+    height: 35rem !important;
+    font-size: 4.5rem !important;
+    border-radius: 8rem !important;
+  }
+  .pretablive {
+    height: 22rem !important;
+  }
+  .presale b {
+    font-size: 12rem;
+    margin-bottom: 8rem !important;
+  }
+  .presale {
+    margin-top: 15rem !important;
+  }
+  .pretab div > p {
+    font-size: 5rem !important;
+    text-align: center;
+  }
+  .presale {
+    height: 152rem !important;
+  }
+  .presale .preher {
+    width: 70% !important;
+    text-align: center !important ;
+    margin: 6rem auto !important  ;
+    font-size: 7.4rem !important;
+  }
+  .pre_button {
+    display: flex;
+    align-items: center;
+  }
+  .pretab > div:nth-child(3) > p[data-v-7952685b]:nth-child(2) {
+    text-align: center !important;
+  }
+  .pre_button button {
+    width: 40rem !important;
+    height: 19rem !important;
+    border-radius: 5rem !important;
+    font-size: 5.5rem !important;
+    font-weight: 900;
+  }
+  .pre_input input {
+    height: 16rem !important;
+    font-size: 6.5rem !important;
+    /* background-color: #000 !important; */
+  }
+  .pre_input {
+    display: flex;
+    width: 90rem !important;
+    height: 16rem !important;
+    border-radius: 6rem !important;
+    text-align: center !important;
+    line-height: 16rem !important;
+    font-size: 6rem !important;
+    padding: 2rem;
+  }
+  .pre_div {
+    margin-top: 15rem;
+    width: 85% !important;
+  }
+  .presale {
+    /* font-size: 16rem; */
+    margin-top: 10rem;
+  }
+  .presale .sjbox {
+    width: 130rem;
+  }
+
+  .sjbox .s {
+    width: 29rem !important;
+    height: 29rem !important;
+  }
+  .nftbg .flnum {
+    width: 100% !important;
+  }
+  .flnum {
+    width: 90% !important;
+    margin-top: 3rem !important;
+
+    /* margin-bottom:3rem !important ; */
+    /* background-color: #ccc; */
+  }
+
+  #app .pickbox {
+    width: 100% !important;
+    height: 66rem;
+  }
+
+  .flnum .jsq p:nth-child(1) {
+    /* margin-top: 5rem !important; */
+
+    font-size: 8rem !important;
+  }
+  .pickb {
+    margin-top: 3rem !important;
+  }
+  .pickb .pickbc > p {
+    margin-top: 18rem;
+    margin-bottom: 7rem;
+    width: 100%;
+    font-size: 10rem !important;
+  }
+  #app .hecon .right {
+    margin-left: 105rem;
+  }
+  .headerbox .hecon .heconr .two {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .headerbox .hecon .heconr .ddd {
+    width: 16rem;
+    height: 15rem;
+  }
+
+  .headerbox .hecon .heconr .one p {
+    font-size: 5rem;
+  }
+
+  .headerbox .hecon .heconr .one {
+    height: 15rem;
+    width: 60%;
+    border: 1rem #000 solid;
+    border-radius: 8rem;
+  }
+
+  .headerbox .hecon .heconr {
+    margin-left: 76rem;
+    width: 60%;
+    height: 19rem;
+    line-height: 18rem;
+    /* background-color: #0e8ce3; */
+  }
+
+  .headerbox .hecon .heconl a {
+    display: inline-block;
+  }
+
+  .hecon .heconl .henei {
+    width: 100%;
+    margin: -2rem auto !important;
+    display: flex;
+    justify-content: space-around !important;
+  }
+
+  .hecon .heconl .henei p:nth-child(1) {
+    font-size: 7rem !important;
+  }
+
+  .hecon .heconl .henei p:nth-child(2) {
+    font-size: 6rem !important;
+  }
+
+  #app .pickbg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url("./assets//twocat.png");
+  }
+  #app .whitebg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url("./assets//twocat.png");
+  }
+  #app .nftbg {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-image: url("./assets//twocat.png");
+  }
+  .hecon .heconl {
+    flex-direction: column-reverse;
+    width: 100% !important;
+    align-items: flex-start !important;
+    height: 20rem;
+  }
+
+  .hecon .heconl a p:nth-child(1) {
+    width: 50% !important;
+    font-size: 12rem !important;
+    margin-top: 8rem;
+    margin-left: 12rem;
+  }
+
+  .hecon .heconl a span:nth-child(2) {
+    width: 8rem !important;
+    height: 8rem;
+    line-height: 8rem;
+    font-size: 5rem !important;
+    margin-top: 13rem;
+    margin-left: 23rem;
+    border: 1rem #000 solid;
+  }
+
+  #app .hecon {
+    flex-direction: column;
+  }
+
+  .hecon .heconl a p:nth-child(3) {
+    width: 50% !important;
+    font-size: 12rem !important;
+    margin-top: 0rem;
+    margin-left: 20rem;
+  }
+
+  #app .hetop {
+    width: 96%;
+    height: 40rem;
+    flex-direction: column-reverse;
+    /* background-color: #FD5B1F; */
+  }
+  .whiteCat {
+    background-image: url("./assets/catfff.png") !important;
+    /* width: 90% !important; */
+    height: 134rem !important;
+    position: relative;
+  }
+  .whit_box .whiteCat .with_span {
+    width: 90%;
+    font-size: 7rem !important;
+    margin: 0 auto !important;
+    position: absolute;
+    top: 58%;
+    left: 5%;
+    line-height: 10rem;
+  }
+
+  .whit_box .whiteCat {
+    width: 96% !important;
+  }
+
+  .cat_textoh .cat_textand {
+    font-size: 9rem !important;
+    width: 95% !important;
+    line-height: 17rem;
+  }
+
+  #app .cdro_box .crdo_one .cdro_text {
+    width: 100%;
+    font-size: 4rem;
+    margin-top: 15rem;
+    line-height: 6.5rem;
+  }
+
+  #app .cdro_box .crdo_two .cdro_text {
+    width: 78%;
+    font-size: 4rem;
+    margin-top: 14.5rem;
+    line-height: 6.5rem;
+  }
+
+  #app .cdro_box .crdo_three .cdro_text {
+    width: 78%;
+    font-size: 4rem;
+    margin-top: 14.5rem;
+    line-height: 6.5rem;
+  }
+
+  #app .cdro_box .crdo_one .crdo_p {
+    width: 95%;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 3rem;
+    font-size: 4rem;
+    border: 1rem solid #231715;
+    justify-content: space-evenly;
+    margin: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: -4.2rem;
+    line-height: 9rem;
+  }
+
+  #app .cdro_box .crdo_two > p {
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 3rem;
+    font-size: 4rem;
+    border: 1rem solid #231715;
+    justify-content: space-evenly;
+    margin: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: -8.2rem;
+  }
+
+  #app .cdro_box .crdo_three .crdo_p {
+    width: 95%;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 3rem;
+    font-size: 4rem;
+    border: 1rem solid #231715;
+    justify-content: space-evenly;
+    margin: 1rem;
+    position: absolute;
+    top: 2rem;
+    left: -5.2rem;
+  }
+
+  #app .cdro_box .crdo_one {
+    height: 75rem;
+    border: 1rem solid #000;
+    border-radius: 3rem;
+    width: 75%;
+    padding: 3rem;
+    margin: 4rem auto;
+  }
+
+  #app .cdro_box .crdo_three {
+    height: 75rem;
+    border: 1rem solid #000;
+    border-radius: 3rem;
+    width: 75%;
+    padding: 3rem;
+    margin: 4rem auto;
+  }
+
+  #app .cdro_box .crdo_two {
+    height: 75rem;
+    border: 1rem solid #000;
+    border-radius: 3rem;
+    width: 75%;
+    padding: 3rem;
+    margin: 4rem auto;
+  }
+
+  #app .cdro_box {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+  .ba {
+    width: 100%;
+    height: 500rem;
+    margin-top: 20rem;
+  }
+  /* .bahe img {
+    width: 100%;
+    height: 60rem;
+    margin: 2rem;
+  } */
+  .bahe {
+    width: 85% !important;
+    height: 53rem !important;
+  }
+  #app .pick_h2 {
+    margin-top: 12rem;
+    font-size: 8rem;
+    height: 13rem;
+    text-shadow: 0 -2px 0 #fff, 0 -2px 0 #fff, 0 2px 0 #fff, 0 2px 0 #fff,
+      -2px 0 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff, -1px -2px 0 #fff,
+      1px -2px 0 #fff, -1px 2px 0 #fff, 1px 2px 0 #fff, -2px -1px 0 #fff,
+      2px -1px 0 #fff, -2px 1px 0 #fff, 2px 1px 0 #fff, -2px -2px 0 #fff,
+      2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -2px -2px 0 #fff,
+      2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+  }
+
+  #app .pick_div {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .pick_div .pick_sapn:nth-child(1) {
+    font-size: 15rem !important;
+  }
+
+  .pick_div .pick_ok:nth-child(2) {
+    width: 12rem;
+    left: 45.85%;
+    height: 12rem;
+    line-height: 12rem;
+    border: 1rem #000 solid;
+    font-size: 5rem !important;
+  }
+
+  .pick_div .pick_rick:nth-child(3) {
+    font-size: 15rem !important;
+  }
+
+  /* #app .qicon {
+    width: 100% !important;
+    height: 93rem !important;
+  } */
+
+  .qi .qicon .qonh {
+    /* column-gap: 43rem; */
+    width: 68%;
+    font-size: 2rem;
+    margin: 0 auto;
+    /* padding-top: 34.5rem; */
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .qi .qicon .qonh .qdone {
+    position: absolute;
+    left: 8%;
+    top: 139%;
+    font-size: 3rem;
+  }
+  .qi .qicon .qonh .qdtwo {
+    position: absolute;
+    left: 67%;
+    top: 139%;
+    font-size: 3rem;
+  }
+  .qi .qicon .qtwh .qdthree {
+    position: absolute;
+    left: 9%;
+    top: 187%;
+    font-size: 3rem;
+  }
+  .qi .qicon .qtwh .qdfour {
+    position: absolute;
+    left: 42%;
+    top: 187%;
+    font-size: 3rem;
+  }
+  .qi .qicon .qtwh .qdfive {
+    position: absolute;
+    left: 78%;
+    top: 187%;
+    font-size: 3rem;
+  }
+  .qdone p:nth-child(2) {
+    position: absolute !important;
+    left: 2% !important;
+    top: 105% !important;
+    font-size: 3rem;
+  }
+  .qi .qicon .qtwh {
+    display: flex;
+    column-gap: 18.5rem;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    justify-content: space-around;
+  }
+
+  #app .six > p {
+    width: 100%;
+    margin: 39rem auto 0;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 9rem;
+  }
+  #app .qi > .qibot {
+    width: 100%;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 9rem;
+  }
+  #app .qicon {
+    width: 100%;
+    height: 130rem;
+    margin: 7rem auto 0;
+  }
+
+  #app .six h2 {
+    font-size: 12rem;
+    line-height: 14rem;
+  }
+
+  #app .qi h2 {
+    font-size: 12rem;
+    line-height: 19.5rem;
+  }
+
+  #app .five h2 {
+    font-size: 8rem;
+  }
+
+  #app .six .sanj div:nth-child(1) {
+    margin-top: 12rem;
+  }
+
+  #app .six .sanj div:nth-child(2) {
+    margin-top: 34rem;
+    column-gap: 5rem;
+    width: 100%;
+  }
+
+  #app .six .sanj div:nth-child(3) {
+    margin-top: 33rem;
+    column-gap: 28rem;
+    width: 94%;
+  }
+
+  .six .sanj div p {
+    font-size: 6.5rem !important;
+  }
+
+  #app .six img:nth-child(3) {
+    display: none !important;
+  }
+
+  #app .six img {
+    width: 161rem;
+    height: 134rem;
+  }
+
+  #app .ftop {
+    font-size: 10rem;
+  }
+
+  #app .fivefon > p {
+    font-size: 5rem !important;
+    font-weight: 500;
+    line-height: 7.5rem;
+    margin-top: 4.5rem;
+    width: 90%;
+    color: #000;
+    position: relative;
+    z-index: 3;
+    position: absolute;
+    top: 43rem !important;
+    left: -10rem;
+  }
+
+  .fivefon {
+    margin-top: -42rem !important;
+    position: relative;
+    background-image: url("./assets//cattext.png") !important;
+    width: 96% !important;
+    height: 186rem !important;
+  }
+
+  .five .ftop .six h2 {
+    width: 67% !important;
+    display: inline-block;
+    font-size: 6rem !important;
+    margin: 2rem !important;
+  }
+
+  .five .ftop {
+    width: 100% !important;
+    height: 12rem;
+    justify-content: center;
+  }
+
+  .five .ftop img {
+    width: 13rem !important;
+    height: 15rem !important;
+  }
+
+  .si .cionlist {
+    width: 45%;
+  }
+
+  .si .cionlist a {
+    width: 19.375rem !important;
+    height: 19.5625rem !important;
+  }
+
+  .si .cionlist {
+    height: 20rem;
+    justify-content: space-evenly !important;
+  }
+
+  #app .si .botbut a {
+    width: 35%;
+    height: 12rem;
+    /* font-size: 6rem !important; */
+    /* background-color: rgb(222, 252, 255); */
+    border: 0.8rem #231715 solid;
+    box-shadow: 0px 11px 6px 0px rgba(133, 205, 255, 0.95);
+  }
+
+  #app .si .botbut a p {
+    font-size: 4.6rem;
+  }
+
+  #app .si .botbut button p {
+    font-size: 4.6rem;
+  }
+
+  #app .si .botbut button {
+    width: 35%;
+    height: 12rem;
+    /* font-size: 6rem !important; */
+    /* background-color: rgb(222, 252, 255); */
+    border: 0.8rem #231715 solid;
+    box-shadow: 0px 11px 6px 0px rgba(133, 205, 255, 0.95);
+  }
+
+  #app .si .botbut {
+    width: 80%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    height: 12rem;
+  }
+
+  #app .si p:nth-child(3) {
+    width: 90%;
+    font-size: 8rem;
+    line-height: 12rem;
+    height: 30rem;
+  }
+
+  .si .silogo p:nth-child(2) {
+    font-size: 7.125rem;
+    color: #231715;
+    margin-top: 37% !important;
+    margin-left: 13rem !important;
+    font-size: 11rem !important;
+  }
+
+  .si .silogo p:nth-child(1) {
+    font-size: 7.125rem;
+    color: #0e8ce3;
+    margin-top: 37% !important;
+    font-size: 11rem !important;
+    margin-left: 0 !important;
+  }
+
+  .si .silogo {
+    height: 85rem !important;
+    width: 161.6rem !important;
+    justify-content: space-around;
+  }
+
+  .si h2 {
+    width: 80% !important;
+    font-size: 8rem !important;
+    text-align: center !important;
+    line-height: 12rem !important;
+    margin-top: 23rem !important;
+    height: 65rem !important;
+  }
+
+  #app {
+    background-image: url("./assets/backimg.png");
+    background-size: 100%;
+    background-repeat: repeat;
+  }
+
+  .jsq .sjbox .s p:nth-child(1) {
+    font-size: 9rem;
+  }
+
+  .jsq .sjbox .s p:nth-child(2) {
+    font-size: 4rem;
+  }
+
+  .sjbox .mh {
+    font-size: 11.67rem !important;
+  }
+
+  .jsq .sjbox .s {
+    width: 14%;
+    height: 23rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    /* justify-content: space-evenly; */
+    font-size: 10rem;
+    border-radius: 3rem;
+    border: 0.7rem #231815 solid;
+    /* line-height: 20rem; */
+  }
+
+  .nftbg .jsq .sjbox {
+    display: flex !important;
+    align-items: center;
+    margin: 0 0 6rem;
+  }
+  .jsq .sjbox {
+    /* margin-top: 30REM; */
+    display: flex !important;
+    align-items: center;
+    margin-top: 10rem;
+  }
+
+  .twobox .jsq {
+    width: 87% !important;
+    height: 10rem !important;
+  }
+
+  .two .twobox > p:nth-child(1) {
+    margin-top: 30rem;
+    font-size: 12rem !important;
+  }
+
+  .two .twobox > p:nth-child(2) {
+    font-size: 6.5rem !important;
+    margin-top: 8rem !important;
+  }
+
+  .two .twobox > p:nth-child(4) {
+    margin-top: 38rem !important;
+    font-size: 7rem !important;
+  }
+
+  .twobox > .twobf {
+    flex-direction: column;
+    display: flex;
+    height: 35rem !important;
+    width: 54% !important;
+    margin-left: 19rem !important;
+    margin-top: 25rem !important;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+  }
+
+  .twobox > .twobf button {
+    width: 100% !important;
+    height: 14rem !important;
+    font-size: 5rem !important;
+    border-radius: 7rem !important;
+    font-weight: 900 !important;
+    border: 1rem #231815 solid !important;
+    box-shadow: 0px 11px 6px 0px rgba(133, 205, 255, 0.95);
+  }
+
+  .two .orgcat {
+    display: none;
+  }
+
+  .two .twobox {
+    background-image: url("./assets/cat_blue.png") !important;
+    margin: -15rem auto !important;
+    /* background-position:  !important; */
+    width: 100% !important;
+    height: 209rem !important;
+  }
+
+  .first .fiimg .fiR {
+    width: 38%;
+    font-size: 10.1rem;
+    font-weight: 600;
+    margin-left: 31%;
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+  }
+
+  .fiimg .fip {
+    width: 37% !important;
+    height: 11rem !important;
+    margin-top: 2rem !important;
+    margin-left: 32% !important;
+    line-height: 6rem !important;
+    border-radius: 4rem !important;
+    text-align: center !important;
+  }
+
+  .first .fiimg .filog p:nth-child(1) {
+    font-size: 23rem;
+    /* -webkit-text-stroke: 4px #FD5B1F;
+      text-shadow: 1rem 1rem 1rem #FD5B1F; */
+  }
+
+  .first .fiimg .filog span {
+    width: 14rem !important;
+    height: 14rem !important;
+    line-height: 15rem !important;
+    font-size: 7.5625rem !important;
+    top: 55% !important;
+    left: 41% !important;
+    border: 1rem black solid !important;
+  }
+
+  .first .fiimg .filog p:nth-child(3) {
+    font-size: 23rem;
+    height: 28rem;
+    /* -webkit-text-stroke: 4px #FFFFFF; */
+    /* text-shadow:1rem   1rem 0 #FFFFFF; */
+  }
+
+  .first .fiimg .filog {
+    width: 33%;
+    text-align: center;
+    margin-top: 20rem;
+    padding-top: 8rem;
+    line-height: 34rem;
+  }
+
+  .first .fiimg {
+    height: 181rem !important;
+    width: 100% !important;
+    margin: 1rem auto !important;
+    background-image: url("./assets//catyell.png") !important;
+  }
+
+  .first {
+    /* width: 182rem; */
+    height: 100%;
+  }
+
+  .first > .fitop button p {
+    font-size: 4.5rem !important;
+    font-weight: 400;
+  }
+
+  .first > .fitop button {
+    width: 29% !important;
+    /* margin:2.5rem !important; */
+    padding: 3rem 1.875rem !important;
+    border: 1rem solid #231815 !important;
+    /* box-shadow: 0px 11px 6px 0px rgba(133,205,255,0.95)!; */
+  }
+
+  .first > .fitop .button_div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 8.56rem;
+    /* justify-content: space-between */
+    /* justify-content:center; */
+  }
+
+  .first > .fitop {
+    width: 100%;
+    flex-direction: column;
+    margin: 2rem auto;
+    top: 8.525rem;
+  }
+
+  .first > .fitop .lcion {
+    /* width: 72%; */
+    /* display: flex; */
+    margin: 2rem 5rem 0 0;
+    justify-content: flex-end;
+  }
+  .first > .fitop .lcion .fj {
+    padding: 2rem 2.8rem 2rem 1.2rem !important;
+  }
+  .first > .fitop .lcion a {
+    display: inline-block;
+    width: 15rem !important;
+    height: 15rem !important;
+    margin: 0 0 0 2rem !important;
+    border-radius: 9rem !important;
+    background-color: rgb(222, 252, 255) !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+    border: 1.4rem solid rgb(0, 121, 190) !important;
+  }
+}
