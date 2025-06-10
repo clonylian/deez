@@ -13,9 +13,9 @@
           </div>
         </div>
         <div class="lcion right">
-          <a href="https://twitter.com/deez_erc20" target="_blank"
+          <a href="https://x.com/DZCZ_ON_BSC" target="_blank"
             ><img src="" alt="" /></a
-          ><a href="https://t.me/deezcatz" target="_blank" class="fj"
+          ><a href="https://t.me/DZCZ_ON_BSC" target="_blank" class="fj"
             ><img src="" alt=""
           /></a>
         </div>

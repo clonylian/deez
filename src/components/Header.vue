@@ -13,10 +13,10 @@
         >
       </div>
       <div class="lcion">
-        <a href="https://twitter.com/deez_erc20" target="_blank">
+        <a href="https://x.com/DZCZ_ON_BSC" target="_blank">
           <img src="" alt="" />
         </a>
-        <a href="https://t.me/deezcatz" target="_blank" class="fj">
+        <a href="https://t.me/DZCZ_ON_BSC" target="_blank" class="fj">
           <img src="" alt="" />
         </a>
       </div>
@@ -27,8 +27,10 @@
         <span>OR</span>
         <p>CATZ</p>
       </div>
-      <p class="fip">THE WORLD MARKETPLACE</p>
-      <p class="fiR">$DEEZ CoiN</p>
+      <p class="fip" @click="copy()">
+        0x0f4fc335a8f585a225a8078372be31bcdc0b4444
+      </p>
+      <p class="fiR">$DZCZ CoiN</p>
     </div>
   </div>
   <div style="display: none">
@@ -77,36 +79,6 @@
         DeezCatz hodlers.
       </p>
     </div>
-  </div>
-  <div class="six">
-    <h2>1.9% Tax on Buy/Sell</h2>
-    <img src="" alt="" />
-    <img src="" alt="" />
-    <div class="sanj">
-      <div>
-        <p>HODLers 0.7%</p>
-      </div>
-      <div>
-        <p>Defi Treasury 0.7%</p>
-        <p>Team/Marketing 0.1%</p>
-      </div>
-      <div class="lp">
-        <p>LP 0.4%</p>
-        <p>LP 0.4%</p>
-        <p>LP 0.4%</p>
-      </div>
-    </div>
-    <p>
-      The treasury grows with every trade; getting 0.7% of the 1.9% tax. It uses
-      this to invest in DeFi and only uses the returns to create volume for
-      DeezCatz, so over time, you can expect DeezCatz's volume floor to rise,
-      and increase your reflections as a result.
-      <br />
-      <span style="margin-top: 2rem; display: block">
-        Catoshi designed DeezCatz, so you never have to sell out to crystalize
-        your gains. Simply hodl your $Deez and watch the reflections purrr in.
-      </span>
-    </p>
   </div>
   <div class="qi">
     <h2>Tokenomics</h2>
@@ -212,24 +184,8 @@
       <p>DEEZCATZ All Rights Reserved</p>
     </div>
   </footer>
-  <div v-if="showMask" class="mask" @click.self="closeMask">
-    <div class="maskbox">
-      <div class="guanbi" @click="handleConfirm"></div>
-      <div class="buymask">BUY $DEEZ TOKEN WITH WETH</div>
-      <div class="input_one">
-        <input
-          type="text"
-          v-model.number="input1Value"
-          oninput="value=value.replace(/[^\d]/g,'')"
-        />
-        <p>WETH</p>
-      </div>
-      <div class="input_two">
-        <input type="text" oninput="value=value.replace(/[^\d]/g,'')" />
-        <!-- <span>=$ 0</span> -->
-        <p>$DEEZ</p>
-      </div>
-    </div>
+  <div @click="iscopybox(false)" :class="iscopy ? 'copybox' : 'none'">
+    <button><p>COPIED</p></button>
   </div>
 </template>
 <script setup>
@@ -238,6 +194,10 @@ import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 const store = useStore();
 const router = useRouter();
+
+let iscopy = ref(false);
+
+let address = ref("0x0f4fc335a8f585a225a8078372be31bcdc0b4444");
 
 const stake = () => {
   router.push("/stake");
@@ -250,8 +210,57 @@ const pickle = () => {
   store.commit("updateData", "Welcome Airdrop Dashboard");
   localStorage.setItem("rouhead", "Airdrop");
 };
+
+let copy = () => {
+  navigator.clipboard.writeText(address.value);
+  iscopybox(true);
+};
+
+let iscopybox = (bol) => {
+  iscopy.value = bol;
+};
 </script>
 <style scoped>
+.copybox {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.25);
+  top: 0;
+  left: 0;
+}
+
+.copybox button {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0.3125rem solid #0e280e;
+  width: auto;
+  padding: 1.5rem 1.875rem;
+  background: rgb(222, 252, 255);
+  box-shadow: inset 0 0.5rem 0.5rem rgba(133, 204, 255, 0.25);
+  border-radius: 100px;
+  margin: 0 0.9rem 0 0;
+}
+
+.copybox button {
+  text-shadow: 0 -2px 0 #fff, 0 -2px 0 #fff, 0 2px 0 #fff, 0 2px 0 #fff,
+    -2px 0 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 2px 0 0 #fff, -1px -2px 0 #fff,
+    1px -2px 0 #fff, -1px 2px 0 #fff, 1px 2px 0 #fff, -2px -1px 0 #fff,
+    2px -1px 0 #fff, -2px 1px 0 #fff, 2px 1px 0 #fff, -2px -2px 0 #fff,
+    2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff, -2px -2px 0 #fff,
+    2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
+}
+
+.fitop button p {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: 700;
+}
+
 .jinz {
   pointer-events: none;
   cursor: not-allowed;
@@ -808,17 +817,18 @@ const pickle = () => {
 
 .fip {
   width: 20%;
-  font-size: 1.7rem;
+  font-size: 0.85rem;
   background: white;
   font-weight: 600;
   margin-left: 36%;
   padding: 1rem 1.5rem;
   border-radius: 3rem;
+  cursor: pointer;
 }
 
 .fiR {
   width: 20%;
-  font-size: 4.1rem;
+  font-size: 3.5rem;
   font-weight: 600;
   margin-left: 36%;
   padding: 3rem 1.5rem 1rem;

@@ -5,29 +5,12 @@
       <div class="pickbox">
         <div class="pickb">
           <div class="pickbc">
-            <p>Aridorp Cooming soon!</p>
+            <p>Airdrop Coming soon!</p>
           </div>
         </div>
       </div>
       <div class="presale">
         <div class="pre_div">
-          <div class="pre_two" v-if="isconnect == 'Disconnect'">
-            <div class="pre_input">
-              <input
-                class="prinput"
-                v-model="balance"
-                type="number"
-                step="0.01"
-                min="0.05"
-                max="1.00"
-                @blur="accounty()"
-              />
-              <span>ETH</span>
-            </div>
-            <div class="pre_button jinz">
-              <button @click="contribute">Contribute</button>
-            </div>
-          </div>
           <div class="presale_admin">Eligibility Check</div>
         </div>
       </div>

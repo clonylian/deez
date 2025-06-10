@@ -1132,7 +1132,8 @@ button {
 
   .fiimg .fip {
     width: 37% !important;
-    font-size: 4.7rem;
+    font-size: 2.7rem !important;
+    word-wrap: break-word;
     height: 11rem !important;
     margin-top: 2rem !important;
     margin-left: 32% !important;
@@ -1190,6 +1191,19 @@ button {
   }
 
   .first > .fitop button {
+    width: 29% !important;
+    /* margin:2.5rem !important; */
+    padding: 3rem 1.875rem !important;
+    border: 1rem solid #231815 !important;
+    /* box-shadow: 0px 11px 6px 0px rgba(133,205,255,0.95)!; */
+  }
+
+  .copybox button p {
+    font-size: 4.5rem !important;
+    font-weight: 400;
+  }
+
+  .copybox button {
     width: 29% !important;
     /* margin:2.5rem !important; */
     padding: 3rem 1.875rem !important;
